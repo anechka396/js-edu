@@ -9,6 +9,10 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+		var learnJS = 800;
+		var learnBasics = 500;
+		var  time = knowsProgramming ? learnJS : learnJS + learnBasics;
+		var weeksSpent =  time / config[focus];
+      return weeksSpent - Math.round(weeksSpent) <= 0 ? Math.round(weeksSpent) : Math.round(weeksSpent) + 1;
   };
   
